@@ -24,5 +24,9 @@ namespace Lab4WPFApp
         {
             InitializeComponent();
         }
+
+        
+
+        
     }
 }

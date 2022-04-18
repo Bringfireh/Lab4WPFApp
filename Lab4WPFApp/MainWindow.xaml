@@ -5,8 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lab4WPFApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="MainWindow" Height="554.649" Width="1194.811">
+    <Grid Margin="-332,-29,-8,-21" ClipToBounds="True" SnapsToDevicePixels="True" HorizontalAlignment="Left" Width="1527" Height="574" VerticalAlignment="Bottom">
+        <Label x:Name="lblName" Content="Name" HorizontalAlignment="Left" Height="37" Margin="364,60,0,0" VerticalAlignment="Top" Width="97" FontSize="24"/>
+        <Label x:Name="lblSurname" Content="Surname&#xD;&#xA;" HorizontalAlignment="Left" Margin="364,135,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.104,-0.274" Width="115" FontSize="24" Height="45"/>
+        <Label x:Name="lblGender" Content="Gender" HorizontalAlignment="Left" Height="41" Margin="364,201,0,0" VerticalAlignment="Top" Width="136" FontSize="24"/>
+        <Label x:Name="lblEmail" Content="Email" HorizontalAlignment="Left" Height="39" Margin="364,273,0,0" VerticalAlignment="Top" Width="136" FontSize="24"/>
+        <TextBox x:Name="txtName" HorizontalAlignment="Left" Height="37" Margin="500,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="292" FontSize="24" />
+        <TextBox x:Name="txtSurname" HorizontalAlignment="Left" Height="37" Margin="500,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="292" FontSize="24"/>
+        <TextBox x:Name="txtGender" HorizontalAlignment="Left" Height="37" Margin="500,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="292" FontSize="24"/>
+        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="37" Margin="500,268,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="292" FontSize="24"/>
+        <Button x:Name="btnInsert" Content="Insert" HorizontalAlignment="Left" Height="59" Margin="364,437,0,0" VerticalAlignment="Top" Width="237" FontSize="24"/>
+        <Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Height="59" Margin="658,437,0,0" VerticalAlignment="Top" Width="237" FontSize="24"/>
+        <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Height="59" Margin="949,437,0,0" VerticalAlignment="Top" Width="237" FontSize="24"/>
+        <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Height="59" Margin="1234,437,0,0" VerticalAlignment="Top" Width="237" FontSize="24"/>
+        <DataGrid x:Name="dgRecord" HorizontalAlignment="Left" Height="349" Margin="818,35,0,0" VerticalAlignment="Top" Width="653" FontSize="18"/>
+        <Label x:Name="lblId" Content="ID" HorizontalAlignment="Left" Height="50" Margin="364,347,0,0" VerticalAlignment="Top" Width="136" FontSize="24"/>
+        <TextBox x:Name="txtID" HorizontalAlignment="Left" Height="37" Margin="500,347,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="292"  FontSize="24"/>
+
+
+
     </Grid>
 </Window>
