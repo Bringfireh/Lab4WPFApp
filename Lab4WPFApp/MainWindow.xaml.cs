@@ -188,12 +188,16 @@ namespace Lab4WPFApp
             {
                 MessageBox.Show("Please provide all informations", "Error Message");
             }
-            bool istrue=Insert();
-            if (istrue == true)
+            else
             {
-                MessageBox.Show("Record Inserted sucessfully", "Success Message");
-                LoadData();
+                bool istrue = Insert();
+                if (istrue == true)
+                {
+                    MessageBox.Show("Record Inserted sucessfully", "Success Message");
+                    LoadData();
+                }
             }
+           
             
         }
 
@@ -203,14 +207,18 @@ namespace Lab4WPFApp
             {
                 MessageBox.Show("Please provide all informations", "Error Message");
             }
+            else
+            {
+                bool isUpdated = Update();
+                if (isUpdated == true)
+                {
+                    MessageBox.Show("Record Updated sucessfully", "Success Message");
+                    LoadData();
+                }
+            }
             
            
-            bool isUpdated = Update();
-            if (isUpdated == true)
-            {
-                MessageBox.Show("Record Updated sucessfully", "Success Message");
-                LoadData();
-            }
+           
         }
     }
 }
