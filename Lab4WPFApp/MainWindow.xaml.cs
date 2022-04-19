@@ -25,8 +25,15 @@ namespace Lab4WPFApp
             InitializeComponent();
         }
 
-        
+        private void BtnClear_Click(object sender, RoutedEventArgs e)
+        {
+            //Control ctrl = new Control();
 
-        
+            txtName.Text = "";
+            txtSurname.Text = "";
+            txtGender.Text = "";
+            txtEmail.Text = "";
+            txtID.Text = "";
+        }
     }
 }
