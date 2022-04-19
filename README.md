@@ -2,7 +2,7 @@
 A Simple WPF Application that connects to MySQL Database and performs CRUD Operations on the database
 # Database Setup
 1. Create the MySql Database named <b>studentdata </b>
-2. Create a table students with fields(ID varchar(10), Name varchar(50), Surname varchar(250), Gender varchar(10), Email varchar(50)).
+2. Create a table <b>students</b> with fields(ID varchar(10), Name varchar(50), Surname varchar(250), Gender varchar(10), Email varchar(50)).
 3. Set ID to be primary key.
 4. Make sure you have the connectionstring = "SERVER=localhost;DATABASE=studentdata;UID=root;PASSWORD=";
 # Running the Application
