@@ -8,7 +8,8 @@ A Simple WPF Application that connects to MySQL Database and performs CRUD Opera
 1. Make sure the mysql-connector-net-8.0.28.msi installer is runned on your Machine.
 2. Create a WPF Application
 3. Add Reference - MySql.Data
-4. Design the Application and Write the connection String
-5. Run the Application.
+4. Fix the Import - using MySql.Data.MySqlClient;
+5. Design the Application and Write the connection String
+6. Run the Application.
 # *******************************************************
 Thank you.
