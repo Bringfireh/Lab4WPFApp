@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,10 +27,23 @@ namespace Lab4WPFApp
 
         public MainWindow()
         {
+            
             InitializeComponent();
-            string ConnectionString = "SERVER=localhost;DATABASE=lab4wpf;UID=root;PASSWORD=";
+            LoadData();
+
+        }
+        private void LoadData()
+        {
+            string ConnectionString = "SERVER=localhost;DATABASE=studentdata;UID=root;PASSWORD=";
             connection = new MySqlConnection(ConnectionString);
 
+            MySqlCommand cmd = new MySqlCommand("SELECT * FROM students", connection);
+            this.OpenConnection();
+            DataTable dt = new DataTable();
+            dt.Load(cmd.ExecuteReader());
+            this.CloseConnection();
+
+            dgRecord.DataContext = dt;
         }
         private bool OpenConnection()
         {
@@ -73,18 +87,71 @@ namespace Lab4WPFApp
         }
 
         //Insert statement
-        public void Insert()
+        public bool Insert()
         {
+            string query = "INSERT INTO `students` (`ID`, `Name`, `Surname`, `Gender`, `Email`) VALUES ('" + txtID.Text +"', '" + txtName.Text + "', '" + txtSurname.Text + "', '" + txtGender.Text + "', '" + txtEmail.Text + "')";
+
+            //open connection
+            if (this.OpenConnection() == true)
+            {
+                //create command and assign the query and connection from the constructor
+                try
+                {
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.ExecuteNonQuery();
+                this.CloseConnection();
+                    return true;
+                }catch(MySqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                   
+                }
+            }
+            return false;
         }
 
         //Update statement
-        public void Update()
+        public bool Update()
         {
+            string query = "UPDATE students SET Name='" + txtName.Text+ "', Surname='" +txtSurname.Text + "', Gender='"+txtGender.Text +"', Email='" +txtEmail.Text+"' WHERE ID='" +txtID.Text +"'";
+
+            //Open connection
+            if (this.OpenConnection() == true)
+            {
+                try
+                {
+                    MySqlCommand cmd = new MySqlCommand();
+                    cmd.CommandText = query;
+                    cmd.Connection = connection;
+                    cmd.ExecuteNonQuery();
+                    this.CloseConnection();
+                    return true;
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+               
+            }
+            return false;
         }
 
         //Delete statement
-        public void Delete()
+        public bool Delete()
         {
+            string query = "DELETE FROM students WHERE ID='" + txtID.Text +"'";
+
+            if (this.OpenConnection() == true)
+            {
+                try {
+                    MySqlCommand cmd = new MySqlCommand(query, connection);
+                    cmd.ExecuteNonQuery();
+                    this.CloseConnection();
+                    return true;
+                } catch (MySqlException ex) { MessageBox.Show(ex.Message); }
+                
+            }
+            return false;
         }
         private void BtnClear_Click(object sender, RoutedEventArgs e)
         {
@@ -105,7 +172,44 @@ namespace Lab4WPFApp
             }
             else
             {
-                Delete();
+                bool isDeleted=Delete();
+                if (isDeleted == true)
+                {
+                    MessageBox.Show("Record deleted sucessfully", "Success Message");
+                    LoadData();
+                }
+                
+            }
+        }
+
+        private void BtnInsert_Click(object sender, RoutedEventArgs e)
+        {
+            if (txtName.Text == "" || txtName.Text == " " || txtSurname.Text == "" || txtSurname.Text == " " || txtGender.Text == "" || txtGender.Text == " " || txtEmail.Text == "" || txtEmail.Text == " " || txtID.Text == "" || txtID.Text == " ")
+            {
+                MessageBox.Show("Please provide all informations", "Error Message");
+            }
+            bool istrue=Insert();
+            if (istrue == true)
+            {
+                MessageBox.Show("Record Inserted sucessfully", "Success Message");
+                LoadData();
+            }
+            
+        }
+
+        private void BtnUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            if (txtName.Text == "" || txtName.Text==" " || txtSurname.Text == "" || txtSurname.Text == " " || txtGender.Text == "" || txtGender.Text == " " || txtEmail.Text == "" || txtEmail.Text == " " || txtID.Text == "" || txtID.Text == " ")
+            {
+                MessageBox.Show("Please provide all informations", "Error Message");
+            }
+            
+           
+            bool isUpdated = Update();
+            if (isUpdated == true)
+            {
+                MessageBox.Show("Record Updated sucessfully", "Success Message");
+                LoadData();
             }
         }
     }

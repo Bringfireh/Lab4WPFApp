@@ -15,11 +15,11 @@
         <TextBox x:Name="txtSurname" HorizontalAlignment="Left" Height="37" Margin="500,135,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="292" FontSize="24"/>
         <TextBox x:Name="txtGender" HorizontalAlignment="Left" Height="37" Margin="500,201,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="292" FontSize="24"/>
         <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="37" Margin="500,268,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="292" FontSize="24"/>
-        <Button x:Name="btnInsert" Content="Insert" HorizontalAlignment="Left" Height="59" Margin="364,437,0,0" VerticalAlignment="Top" Width="237" FontSize="24"/>
-        <Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Height="59" Margin="658,437,0,0" VerticalAlignment="Top" Width="237" FontSize="24"/>
+        <Button x:Name="btnInsert" Content="Insert" HorizontalAlignment="Left" Height="59" Margin="364,437,0,0" VerticalAlignment="Top" Width="237" FontSize="24" Click="BtnInsert_Click"/>
+        <Button x:Name="btnUpdate" Content="Update" HorizontalAlignment="Left" Height="59" Margin="658,437,0,0" VerticalAlignment="Top" Width="237" FontSize="24" Click="BtnUpdate_Click"/>
         <Button x:Name="btnDelete" Content="Delete" HorizontalAlignment="Left" Height="59" Margin="949,437,0,0" VerticalAlignment="Top" Width="237" FontSize="24" Click="BtnDelete_Click"/>
         <Button x:Name="btnClear" Content="Clear" HorizontalAlignment="Left" Height="59" Margin="1234,437,0,0" VerticalAlignment="Top" Width="237" FontSize="24" Click="BtnClear_Click"/>
-        <DataGrid x:Name="dgRecord" HorizontalAlignment="Left" Height="349" Margin="818,35,0,0" VerticalAlignment="Top" Width="653" FontSize="18"/>
+        <DataGrid x:Name="dgRecord"  HorizontalAlignment="Left" Height="349" Margin="818,35,0,0" VerticalAlignment="Top" Width="653" FontSize="18" AutoGenerateColumns="True" ItemsSource="{Binding}"/>
         <Label x:Name="lblId" Content="ID" HorizontalAlignment="Left" Height="50" Margin="364,347,0,0" VerticalAlignment="Top" Width="136" FontSize="24"/>
         <TextBox x:Name="txtID" HorizontalAlignment="Left" Height="37" Margin="500,347,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="292"  FontSize="24"/>
 
