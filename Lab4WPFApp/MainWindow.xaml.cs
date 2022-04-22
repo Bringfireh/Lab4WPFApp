@@ -35,7 +35,7 @@ namespace Lab4WPFApp
                 dgRecord.DataContext = sl.LoadData();
             }
             catch(Exception ex) {
-                MessageBox.Show("Connection Error. Contact Admin. Error Detals: " + ex.Message, "MySql Error Message!");
+                MessageBox.Show("Connection Error. Contact Admin. Error Details: " + ex.Message, "MySql Error Message!");
             }
             
 

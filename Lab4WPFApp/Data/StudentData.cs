@@ -16,7 +16,7 @@ namespace Lab4WPFApp.Business
         public string Gender { get; set; }
         public string Email { get; set; }
 
-        //Queries
+        //Queries and ConnectionString (The connection string is got from App.Config file...
         public string selectAllQuery = "SELECT * FROM students";
         public string insertQuery = "INSERT INTO `students` (`ID`, `Name`, `Surname`, `Gender`, `Email`) VALUES (@ID, @Name,@Surname, @Gender, @Email)";
         public string deleteQuery = "DELETE FROM students WHERE ID=@ID";
